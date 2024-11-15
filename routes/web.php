@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\FirebaseAuthController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('register', [FirebaseAuthController::class, 'showRegisterForm'])->name('register');
+Route::post('register', [FirebaseAuthController::class, 'register']);
 
 Route::get('/', function () {
     return view('welcome');
